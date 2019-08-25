@@ -1,7 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="28" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="28" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="7">
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" tilecount="16" columns="4">
   <image source="../images/tiles.png" width="128" height="128"/>
+  <tile id="0">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="causeDeath" type="bool" value="false"/>
+    <property name="collides" type="bool" value="false"/>
+   </properties>
+  </tile>
  </tileset>
  <layer id="2" name="BG1" width="28" height="16">
   <data encoding="csv">
@@ -35,7 +131,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,0,0,0,0,0,0,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
@@ -43,4 +139,9 @@
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 </data>
  </layer>
+ <objectgroup id="4" name="Positions">
+  <object id="6" name="Spawn" x="31" y="256">
+   <point/>
+  </object>
+ </objectgroup>
 </map>

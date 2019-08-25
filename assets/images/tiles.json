@@ -1,0 +1,216 @@
+{
+    "frames": [
+        {
+            "filename": "Dirt",
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "Sky",
+            "frame": {
+                "x": 32,
+                "y": 0,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "Rainbow",
+            "frame": {
+                "x": 64,
+                "y": 0,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_3",
+            "frame": {
+                "x": 96,
+                "y": 0,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_4",
+            "frame": {
+                "x": 0,
+                "y": 32,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_5",
+            "frame": {
+                "x": 32,
+                "y": 32,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_6",
+            "frame": {
+                "x": 64,
+                "y": 32,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_7",
+            "frame": {
+                "x": 96,
+                "y": 32,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_8",
+            "frame": {
+                "x": 0,
+                "y": 64,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_9",
+            "frame": {
+                "x": 32,
+                "y": 64,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_10",
+            "frame": {
+                "x": 64,
+                "y": 64,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_11",
+            "frame": {
+                "x": 96,
+                "y": 64,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_12",
+            "frame": {
+                "x": 0,
+                "y": 96,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_13",
+            "frame": {
+                "x": 32,
+                "y": 96,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_14",
+            "frame": {
+                "x": 64,
+                "y": 96,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "tiles_15",
+            "frame": {
+                "x": 96,
+                "y": 96,
+                "w": 32,
+                "h": 32
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Phaser3",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}
