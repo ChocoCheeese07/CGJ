@@ -1,3 +1,4 @@
+let _scene;
 class Player extends Phaser.Physics.Arcade.Image {
     constructor(scene, x, y) {
         super(scene, x, y);
@@ -8,8 +9,12 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
+        _scene = scene;
         this.setCollideWorldBounds(true);
         this.body.setGravity(0, 400);
+        this.invincible = false;
+        this.maxHealth = 100;
+        this.health = 100;
     }
     controlsCheck() {
         if (this.cursors.left.isDown || keys.A.isDown) {
@@ -25,5 +30,8 @@ class Player extends Phaser.Physics.Arcade.Image {
         if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.body.blocked.down) {
             this.setVelocityY(-250);
         }
+    }
+    update() {
+        this.controlsCheck();
     }
 };
