@@ -1,4 +1,5 @@
 var keys;
+
 class PrototypingScene extends Phaser.Scene {
     constructor() {
         super({
@@ -27,11 +28,14 @@ class PrototypingScene extends Phaser.Scene {
         ];
 
         this.spike1 = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
-        setOrigin(1);
+        setOrigin(1).setImmovable(true);
         this.spike2 = this.physics.add.image(this.spikes[1].x, this.spikes[1].y, "tiles", "Rainbow").
-        setOrigin(1);
-        this.spike3 = this.physics.add.image(this.spikes[2].x, this.spikes[2].y, "tiles", "Rainbow").
-        setOrigin(1);
+        setOrigin(1).setImmovable(true);
+        this.spike3 = this.physics.add.image(this.spikes[2].x, this.spikes[2].y, "tiles", "Spike").
+        setOrigin(1).
+        setImmovable(true).
+        setSize(32, 25, false);
+        this.spike3.setOffset(0, 7);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
 
@@ -40,7 +44,7 @@ class PrototypingScene extends Phaser.Scene {
         });
         this.physics.add.collider(this.player, this.FG1);
         this.physics.add.collider(this.player, [this.spike1, this.spike2, this.spike3], () => {
-            
+            this.scene.restart();
         });
     }
     update() {
