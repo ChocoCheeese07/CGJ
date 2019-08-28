@@ -38,16 +38,22 @@ class PrototypingScene extends Phaser.Scene {
         this.spike3.setOffset(0, 7);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
+        this.healthDisplay = this.add.text(140, 40, "Health: " + this.player.health).
+        setScrollFactor(0);
 
         this.FG1.setCollisionByProperty({
             collides: true
         });
         this.physics.add.collider(this.player, this.FG1);
-        this.physics.add.collider(this.player, [this.spike1, this.spike2, this.spike3], () => {
-            this.scene.restart();
+        this.physics.add.collider(this.player, [this.spike1, this.spike2], () => {
+            this.player.health -= 10;
+        });
+        this.physics.add.collider(this.player, this.spike3, () => {
+            this.player.health += 10;
         });
     }
     update() {
+        this.healthDisplay.setText("Health: " + this.player.health);
         if(this.player.health <= 0) {
             this.scene.restart();
         }
