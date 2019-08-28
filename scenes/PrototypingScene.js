@@ -29,6 +29,12 @@ class PrototypingScene extends Phaser.Scene {
 
         this.spike1 = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
         setOrigin(1).setImmovable(true);
+        this.spike1OverlapDetector = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
+        setOrigin(1).setImmovable(true);
+        this.physics.add.overlap(this.player, this.spike1OverlapDetector, () => {
+             this.player.health -= 10;
+        });
+        
         this.spike2 = this.physics.add.image(this.spikes[1].x, this.spikes[1].y, "tiles", "Rainbow").
         setOrigin(1).setImmovable(true);
         this.spike3 = this.physics.add.image(this.spikes[2].x, this.spikes[2].y, "tiles", "Spike").
@@ -46,7 +52,7 @@ class PrototypingScene extends Phaser.Scene {
         });
         this.physics.add.collider(this.player, this.FG1);
         this.physics.add.collider(this.player, [this.spike1, this.spike2], () => {
-            this.player.health -= 10;
+            
         });
         this.physics.add.collider(this.player, this.spike3, () => {
             this.player.health += 10;
