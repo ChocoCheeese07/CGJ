@@ -38,7 +38,7 @@ class PrototypingScene extends Phaser.Scene {
         this.spike3.setOffset(0, 7);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
-        this.healthDisplay = this.add.text(70, 40, "Health: " + this.player.health).
+        this.healthDisplay = this.add.text(30, 10, "Health: " + this.player.health).
         setScrollFactor(0);
 
         this.FG1.setCollisionByProperty({
