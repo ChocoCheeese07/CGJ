@@ -32,6 +32,9 @@ class Player extends Phaser.Physics.Arcade.Image {
         }
     }
     update() {
+        //if(this.health this.maxHealth){
+            //this.health = 100;
+        //};
         this.controlsCheck();
     }
 };

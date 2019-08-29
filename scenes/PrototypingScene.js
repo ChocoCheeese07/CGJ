@@ -29,21 +29,18 @@ class PrototypingScene extends Phaser.Scene {
 
         this.spike1 = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
         setOrigin(1).setImmovable(true);
-        this.spike1OverlapDetector = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
+        this._spike1 = this.physics.add.image(this.spikes[0].x, this.spikes[0].y, "tiles", "Rainbow").
         setOrigin(1).setImmovable(true);
-        this.physics.add.overlap(this.player, this.spike1OverlapDetector, () => {
-             this.player.health -= 10;
-        });
         
-        this.spike2 = this.physics.add.image(this.spikes[1].x, this.spikes[1].y, "tiles", "Rainbow").
-        setOrigin(1).setImmovable(true);
+        //this.spike2 = this.physics.add.image(this.spikes[1].x, this.spikes[1].y, "tiles", "Rainbow").
+        //setOrigin(1).setImmovable(true);
         this.spike3 = this.physics.add.image(this.spikes[2].x, this.spikes[2].y, "tiles", "Spike").
         setOrigin(1).
         setImmovable(true).
         setSize(32, 25, false);
         this.spike3.setOffset(0, 7);
 
-        this.player = new Player(this, this.spawn.x, this.spawn.y);
+        this.player = new Player(this, 448, this.spawn.y);
         this.healthDisplay = this.add.text(30, 10, "Health: " + this.player.health).
         setScrollFactor(0);
 
@@ -51,8 +48,11 @@ class PrototypingScene extends Phaser.Scene {
             collides: true
         });
         this.physics.add.collider(this.player, this.FG1);
-        this.physics.add.collider(this.player, [this.spike1, this.spike2], () => {
+        this.physics.add.collider(this.player, [/*this.spike1*/, this.spike2], () => {
             
+        });
+        this.physics.add.overlap(this.player, this._spike1, () => {
+             this.player.health -= 10;
         });
         this.physics.add.collider(this.player, this.spike3, () => {
             this.player.health += 10;
@@ -63,6 +63,9 @@ class PrototypingScene extends Phaser.Scene {
         if(this.player.health <= 0) {
             this.scene.restart();
         }
+        if(this.player.body.touching.down){
+        console.log("On Ground");
+        };
         this.player.update();
     }
 }
