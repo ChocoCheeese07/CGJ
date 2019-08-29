@@ -20,21 +20,21 @@ class PrototypingScene extends Phaser.Scene {
         this.FG1 = this.map.createStaticLayer("FG1", this.mapTiles, 0, 0);
         this.Spikes = this.map.createStaticLayer("Spikes", this.mapTiles, 0, 0);
         this.RainbowBlocks = this.map.createStaticLayer("RainbowBlocks", this.mapTiles, 0, 0);
-
+        var playerSpeedUpgradeTimeout;
         this.Spikes.setTileIndexCallback(4, () => {
             this.physics.world.colliders.getActive().find(function(i){
                 return i.name == 'SpikeCollider'
             }).destroy();
             this.player.xSpeed *= 2;
-            this.playerSpeedUpgradeTimeout = setTimeout(() => {
+            playerSpeedUpgradeTimeout = setTimeout(() => {
                 this.player.xSpeed /= 2;
                 this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
             }, 10000);
         }, this);
         
         this.RainbowBlocks.setTileIndexCallback(3, () => {
-            if (this.playerSpeedUpgradeTimeout !=== undefined) {
-                clearTimeout(this.playerSpeedUpgradeTimeout);
+            if (playerSpeedUpgradeTimeout !=== undefined) {
+                clearTimeout(playerSpeedUpgradeTimeout);
             };
             this.scene.restart();
         }, this);
