@@ -33,7 +33,7 @@ class PrototypingScene extends Phaser.Scene {
         }, this);
         
         this.RainbowBlocks.setTileIndexCallback(3, () => {
-            if (playerSpeedUpgradeTimeout !=== undefined) {
+            if (playerSpeedUpgradeTimeout !== undefined) {
                 clearTimeout(playerSpeedUpgradeTimeout);
             };
             this.scene.restart();
