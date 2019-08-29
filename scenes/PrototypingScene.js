@@ -31,6 +31,10 @@ class PrototypingScene extends Phaser.Scene {
                 this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
             }, 10000);
         }, this);
+        
+        this.RainbowBlocks.setTileIndexCallback(3, () => {
+            this.scene.restart();
+        }, this);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
 
@@ -43,6 +47,7 @@ class PrototypingScene extends Phaser.Scene {
 
         this.physics.add.collider(this.player, this.FG1);
         this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
+        this.physics.add.overlap(this.player, this.RainbowBlocks).name = "RainbowBlockCollider";
     }
     update() {
         this.player.update();
