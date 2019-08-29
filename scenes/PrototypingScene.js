@@ -19,6 +19,7 @@ class PrototypingScene extends Phaser.Scene {
         this.BG1 = this.map.createStaticLayer("BG1", this.mapTiles, 0, 0);
         this.FG1 = this.map.createStaticLayer("FG1", this.mapTiles, 0, 0);
         this.Spikes = this.map.createStaticLayer("Spikes", this.mapTiles, 0, 0);
+        this.RainbowBlocks = this.map.createStaticLayer("RainbowBlocks", this.mapTiles, 0, 0);
 
         this.Spikes.setTileIndexCallback(4, () => {
             this.physics.world.colliders.getActive().find(function(i){
