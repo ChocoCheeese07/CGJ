@@ -6,6 +6,8 @@ class Player extends Phaser.Physics.Arcade.Image {
         Phaser.GameObjects.Sprite.call(this, scene, x, y, "Player", "BadPlayer");
         this.cursors = scene.input.keyboard.createCursorKeys();
         this.scene.cameras.main.startFollow(this, false, .1, .6);
+        this.xSpeed = 160;
+        this.jumpHeight = 250;
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -19,22 +21,19 @@ class Player extends Phaser.Physics.Arcade.Image {
     controlsCheck() {
         if (this.cursors.left.isDown || keys.A.isDown) {
             this.flipX = true;
-            this.setVelocityX(-160);
+            this.setVelocityX(-this.xSpeed);
         } else if (this.cursors.right.isDown || keys.D.isDown) {
             this.flipX = false;
-            this.setVelocityX(160);
+            this.setVelocityX(this.xSpeed);
         } else {
             this.setVelocityX(0);
         }
 
-        if ((this.cursors.up.isDown || this.cursors.space.isDown) && this.body.onFloor()) {
-            this.setVelocityY(-250);
-        }
+        if ((this.cursors.space.isDown || this.cursors.up.isDown) && this.body.onFloor()) {
+            this.setVelocityY(-this.jumpHeight);
+          }
     }
     update() {
-        //if(this.health this.maxHealth){
-            //this.health = 100;
-        //};
         this.controlsCheck();
     }
 };
