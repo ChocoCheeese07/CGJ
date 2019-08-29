@@ -26,15 +26,15 @@ class PrototypingScene extends Phaser.Scene {
                 return i.name == 'SpikeCollider'
             }).destroy();
             this.player.xSpeed *= 2;
-            var playerSpeedUpgradeTimeout = setTimeout(() => {
+            this.playerSpeedUpgradeTimeout = setTimeout(() => {
                 this.player.xSpeed /= 2;
                 this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
             }, 10000);
         }, this);
         
         this.RainbowBlocks.setTileIndexCallback(3, () => {
-            if (playerSpeedUpgradeTimeout !=== undefined) {
-                clearTimeout(playerSpeedUpgradeTimeout);
+            if (this.playerSpeedUpgradeTimeout !=== undefined) {
+                clearTimeout(this.playerSpeedUpgradeTimeout);
             };
             this.scene.restart();
         }, this);
