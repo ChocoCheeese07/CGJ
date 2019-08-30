@@ -53,7 +53,7 @@
             }
         },
         {
-            "filename": "tiles_4",
+            "filename": "CrabWalk1",
             "frame": {
                 "x": 0,
                 "y": 32,
@@ -66,7 +66,7 @@
             }
         },
         {
-            "filename": "tiles_5",
+            "filename": "CrabWalk2",
             "frame": {
                 "x": 32,
                 "y": 32,
@@ -79,24 +79,11 @@
             }
         },
         {
-            "filename": "tiles_6",
+            "filename": "TextBox",
             "frame": {
                 "x": 64,
                 "y": 32,
-                "w": 32,
-                "h": 32
-            },
-            "anchor": {
-                "x": 0.5,
-                "y": 0.5
-            }
-        },
-        {
-            "filename": "tiles_7",
-            "frame": {
-                "x": 96,
-                "y": 32,
-                "w": 32,
+                "w": 64,
                 "h": 32
             },
             "anchor": {

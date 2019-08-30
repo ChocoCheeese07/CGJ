@@ -8,6 +8,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         this.scene.cameras.main.startFollow(this, false, .1, .6);
         this.xSpeed = 160;
         this.jumpHeight = 250;
+        this.detectingControls = true;
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
@@ -34,6 +35,8 @@ class Player extends Phaser.Physics.Arcade.Image {
           }
     }
     update() {
+        if(this.detectingControls == true) {
         this.controlsCheck();
+        };
     }
 };

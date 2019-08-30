@@ -22,7 +22,7 @@ class PrototypingScene extends Phaser.Scene {
         this.RainbowBlocks = this.map.createStaticLayer("RainbowBlocks", this.mapTiles, 0, 0);
         var playerSpeedUpgradeTimeout;
         this.Spikes.setTileIndexCallback(4, () => {
-            this.physics.world.colliders.getActive().find(function(i){
+            this.physics.world.colliders.getActive().find(function (i) {
                 return i.name == 'SpikeCollider'
             }).destroy();
             this.player.xSpeed *= 2;
@@ -30,16 +30,25 @@ class PrototypingScene extends Phaser.Scene {
                 this.player.xSpeed /= 2;
                 this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
             }, 10000);
+            this.success = new TextBox(this, 448, 252, "Well, I think you get the point. Press enter to start the game.");
+            this.success.setScale(10, 1);
         }, this);
-        
+
         this.RainbowBlocks.setTileIndexCallback(3, () => {
             if (playerSpeedUpgradeTimeout !== undefined) {
                 clearTimeout(playerSpeedUpgradeTimeout);
             };
-            this.scene.restart();
+            this.player.setPosition(this.spawn.x, this.spawn.y);
+            this.player.xSpeed = 160;
+            this.physics.world.colliders.getActive().find(function (i) {
+                return i.name == 'RainbowBlockCollider'
+            }).destroy();
+            this.tutorial.text.setText("Touch the crab.");
+            this.RainbowBlocks.setVisible(false);
         }, this);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
+        this.tutorial = new TextBox(this, 76, 32, "Touch the rainbows.");
 
         this.FG1.setCollisionByProperty({
             collides: true
@@ -47,8 +56,14 @@ class PrototypingScene extends Phaser.Scene {
         this.Spikes.setCollisionByProperty({
             collides: true
         });
+        this.FG1.setTileIndexCallback(6, () => {
+            this.player.detectingControls = false;
+            this.player.setVelocity(-200, -300);
+            this.tutorial.text.setText("Dont touch the spike");
+        }, this);
 
-        this.physics.add.collider(this.player, this.FG1);
+        this.physics.add.collider(this.player, this.FG1, () => { this.player.detectingControls = true });
+
         this.physics.add.overlap(this.player, this.Spikes).name = "SpikeCollider";
         this.physics.add.overlap(this.player, this.RainbowBlocks).name = "RainbowBlockCollider";
     }
