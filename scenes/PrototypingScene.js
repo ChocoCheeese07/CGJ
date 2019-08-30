@@ -13,6 +13,9 @@ class PrototypingScene extends Phaser.Scene {
         this.map = this.make.tilemap({
             key: "PrototypingMap"
         });
+        this.rainbowComplete = false;
+        this.crabComplete = false;
+        this.spikeComplete = false;
 
         this.mapTiles = this.map.addTilesetImage("tiles", "tiles");
         this.spawn = this.map.findObject("Objects", obj => obj.name === "Spawn");
