@@ -46,6 +46,7 @@ class PrototypingScene extends Phaser.Scene {
             this.physics.world.colliders.getActive().find(function (i) {
                 return i.name == 'RainbowBlockCollider'
             }).destroy();
+            this.rainbowComplete = true;
             this.tutorial.text.setText("Touch the crab.");
             this.RainbowBlocks.setVisible(false);
         }, this);
