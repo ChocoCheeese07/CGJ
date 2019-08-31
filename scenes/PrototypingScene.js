@@ -47,16 +47,13 @@ class PrototypingScene extends Phaser.Scene {
             };
             this.player.setPosition(this.spawn.x, this.spawn.y);
             this.player.xSpeed = 160;
-            this.physics.world.colliders.getActive().find(function (i) {
-                return i.name == 'RainbowBlockCollider'
-            }).destroy();
             this.rainbowComplete = true;
             this.tutorial.text.setText("Touch the crab.");
-            this.RainbowBlocks.setVisible(false);
         }, this);
 
         this.player = new Player(this, this.spawn.x, this.spawn.y);
-        this.tutorial = new TextBox(this, 76, 32, "Touch the rainbows.");
+        this.tutorial = new TextBox(this, 448, 64, "Touch the rainbows.").setScale(4);
+        this.tutorial.text.setFontSize(19);
 
         this.FG1.setCollisionByProperty({
             collides: true
@@ -68,7 +65,7 @@ class PrototypingScene extends Phaser.Scene {
         if(this.rainbowComplete === true) {
         this.crabComplete = true;
             this.player.detectingControls = false;
-            this.player.setVelocity(-200, -300);
+            this.player.setVelocity(-this.player.xSpeed * 1.3, -300);
             this.tutorial.text.setText("Dont touch the spike");
             }
         }, this);
