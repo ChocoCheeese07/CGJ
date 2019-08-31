@@ -12,7 +12,26 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
-        _scene = scene;
+
+        this.JumpSound = this.scene.sound.add("Jump", {
+            mute: false,
+            volume: 5,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay: 0
+        });
+        this.levelCompleteSound = this.scene.sound.add("LevelComplete", {
+            mute: false,
+            volume: 6,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay: 0
+        });
+
         this.setCollideWorldBounds(true);
         this.body.setGravity(0, 400);
         this.invincible = false;
@@ -31,6 +50,7 @@ class Player extends Phaser.Physics.Arcade.Image {
         }
 
         if ((this.cursors.space.isDown || this.cursors.up.isDown) && this.body.onFloor()) {
+            this.JumpSound.play();
             this.setVelocityY(-this.jumpHeight);
           }
     }
